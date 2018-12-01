@@ -3,7 +3,8 @@ var http = require('http');
 
 var server = http.createServer(
     function (request, response) {
-        util.log("request: %s %s", request.method, request.url);
+        util.log("request: %s %s %s", 
+        	request.method, request.url, JSON.stringify(request.headers));
         response.writeHead(200, {'Content-Type': 'text/plain'});
         response.write('Hello World!!');
         response.end();
